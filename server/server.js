@@ -7,11 +7,10 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 
 var app = express();
 
+//app.use(webpack in dev mode)
 var compiler = webpack(config);
-
-app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
+app.use(webpackDevMiddleware(compiler,{noInfo: true, publicPath: config.output.publicPath}));
 app.use(webpackHotMiddleware(compiler));
-
 app.use(express.static('./dist'));
 
 app.use('/', function (req, res) {
