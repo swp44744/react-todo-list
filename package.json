@@ -8,9 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kweiberth/react-todo-list.git"
+    "url": "https://github.com/swp44744/react-todo-list.git"
+
+
   },
-  "author": "Kurt Weiberth",
+  "author": "Swapnil Raut",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.4.5",
