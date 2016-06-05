@@ -11,6 +11,11 @@ class TextInput extends Component {
             inputText : 'initial text'
         }
     }
+    deleteLetter() {
+        this.setState({
+            inputText: this.state.inputText.substring(0,this.state.inputText.length - 1)
+        })
+    }
     handleChange1(event) {
         this.setState({
             inputText: event.target.value
@@ -29,8 +34,7 @@ class TextInput extends Component {
                 />
 
                 <br />
-                <input type="submit" id="textInput_submit"></input>
-                <TextDisplay textFromInput={this.state.inputText}/>
+                <TextDisplay textFromInput={this.state.inputText} deleteLetter={this.deleteLetter.bind(this)}/>
             </div>
             );
 
