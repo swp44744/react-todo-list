@@ -1,22 +1,17 @@
 //This is ES6 import syntaxt
 import React,{ Component} from 'react'
-import TextDisplay from './TextDisplay'
 
 //This is jsx code
-class TextInput extends Component {
+class ToDoInput extends Component {
 
     constructor(props, context) {
         super(props,context)
         this.state = {
-            inputText : 'initial text'
+            inputText : ''
         }
     }
-    deleteLetter() {
-        this.setState({
-            inputText: this.state.inputText.substring(0,this.state.inputText.length - 1)
-        })
-    }
-    handleChange1(event) {
+
+    handleChange(event) {
         this.setState({
             inputText: event.target.value
        })
@@ -27,20 +22,20 @@ class TextInput extends Component {
             <div>Input :
                 <input
                     type="text"
-                    placeholder="enter text here"
+                    placeholder="Type in what to do"
                     id="textInput_id"
                     value={this.state.inputText}
-                    onChange= {this.handleChange1.bind(this)}
+                    onChange= {this.handleChange.bind(this)}
                 />
-
                 <br />
-                <TextDisplay textFromInput={this.state.inputText} deleteLetter={this.deleteLetter.bind(this)}/>
+                <button>Submitt!!</button>
+
             </div>
             );
 
     }
 
 }
-export default TextInput
+export default ToDoInput
 
 
