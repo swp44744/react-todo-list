@@ -7,7 +7,15 @@ import React, {Component} from 'react'
 class ToDoList extends Component {
     render() {
         return(
-          <div>This is To Do List.!</div>
+          <div>This is To Do List.!
+              <ul>
+                  {
+                      this.props.todo.map((todoItem) => {
+                          return <li key={todoItem.id}>{todoItem.text}</li>
+                      })
+                  }
+              </ul>
+          </div>
         );
     }
 }

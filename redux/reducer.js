@@ -6,10 +6,10 @@ function getId(state) {
     
 }
 
-export default function reducer(state, action) {
+let reducer = function(state, action) {
     switch (action.type){
         case 'ADD_TODO':
-            Object.assign({},state,{
+            return Object.assign({},state,{
                 todos:[{
                 text:action.text,
                 completed: false,
@@ -21,3 +21,5 @@ export default function reducer(state, action) {
     }
 
 }
+
+export default reducer
